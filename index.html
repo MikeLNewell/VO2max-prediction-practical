@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09101f">
+  <meta name="description" content="An interactive exercise physiology laboratory investigation for Years 11–13.">
+  <title>Inside the Human Engine | Exercise Physiology Lab</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a href="#welcome" class="brand" aria-label="Inside the Human Engine, home">
+        <div class="brand-icon"><span class="pulse-line">⌁</span></div>
+        <div><span class="brand-main">HUMAN<span>ENGINE</span></span><small>EXERCISE PHYSIOLOGY LAB</small></div>
+      </a>
+      <div class="sidebar-label">YOUR INVESTIGATION</div>
+      <nav class="navigation" aria-label="Main navigation" id="navigation">
+        <a href="#welcome" data-page="welcome"><span class="nav-icon">◈</span><span>Mission control</span><span class="nav-num">01</span></a>
+        <a href="#science" data-page="science"><span class="nav-icon">◎</span><span>Know the science</span><span class="nav-num">02</span></a>
+        <a href="#predict" data-page="predict"><span class="nav-icon">◇</span><span>Make predictions</span><span class="nav-num">03</span></a>
+        <a href="#lab" data-page="lab"><span class="nav-icon">▣</span><span>Live laboratory</span><span class="nav-num">04</span></a>
+        <a href="#analyse" data-page="analyse"><span class="nav-icon">⌁</span><span>Analyse your data</span><span class="nav-num">05</span></a>
+        <a href="#estimate" data-page="estimate"><span class="nav-icon">∑</span><span>Can we predict max?</span><span class="nav-num">06</span></a>
+        <a href="#results" data-page="results"><span class="nav-icon">▤</span><span>Your results</span><span class="nav-num">07</span></a>
+        <a href="#challenge" data-page="challenge"><span class="nav-icon">✦</span><span>Final challenge</span><span class="nav-num">08</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="mini-eyebrow">SESSION PROGRESS</div>
+        <div class="progress-track"><div class="progress-fill" id="session-progress"></div></div>
+        <div class="progress-caption" id="progress-caption">0 of 8 activities visited</div>
+        <div class="privacy-note"><span class="dot"></span> LOCAL · NO ACCOUNTS · NO CLOUD</div>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left"><button class="mobile-menu icon-button" id="toggle-sidebar" aria-label="Toggle navigation">☰</button><span class="top-kicker">SPORT &amp; EXERCISE SCIENCE</span><span class="top-divider">/</span><span id="breadcrumb">Mission control</span></div>
+        <div class="topbar-right"><span class="status-chip"><span class="status-light"></span> LAB READY</span><button class="timer-button" id="clock-button" title="Start/pause the 45-minute session">◷ <span id="clock">45:00</span></button><button class="outline-button compact" id="instructor-button">⚙ Facilitator</button></div>
+      </header>
+      <main id="app" tabindex="-1" aria-live="polite"></main>
+      <footer class="footer"><span>INSIDE THE HUMAN ENGINE</span><span>Learn. Test. Discover.</span><span>SUBMAXIMAL TEST · RPE ≤ 15</span></footer>
+    </div>
+  </div>
+  <div id="modal-root"></div>
+  <div id="toast-root" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
