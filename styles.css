@@ -6,3 +6,14 @@
 @media(max-width:530px){.grid.four,.form-grid,.upload-map{grid-template-columns:1fr}.card{padding:18px}.hero h1{font-size:39px}.topbar-right .compact{font-size:0}.topbar-right .compact:after{content:'⚙';font-size:16px}.hero-art{display:none}.timer-display{font-size:52px}.rpe-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media print{body{background:white!important;color:black!important}.sidebar,.topbar,.footer,.no-print,.btn-row,button{display:none!important}.workspace{display:block}.page{padding:0!important;max-width:none!important}.card,.chart-frame{break-inside:avoid;background:white!important;border-color:#aaa!important;color:#000!important}.card p,.muted,.stat-sub,.stat-label,.stat-unit{color:#333!important}.stat-value,h1,h2,h3{color:#000!important}.chart-frame svg text{fill:#000!important}#app{color:#000!important}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Official University of Bedfordshire branding (approved horizontal artwork from university asset library). */
+.brand{padding-bottom:15px}
+.university-brand{display:block;margin:0 9px 25px;padding:11px 2px 13px;border-top:1px solid #263d53;border-bottom:1px solid #263d53}
+.university-brand img{display:block;max-width:100%;width:215px;height:auto;object-fit:contain}
+.hero-university-brand{display:inline-block;position:relative;z-index:3;margin-top:5px;padding:6px 0;max-width:100%}
+.hero-university-brand img{display:block;width:min(286px,100%);height:auto;object-fit:contain}
+.hero-university-brand:hover,.university-brand:hover{opacity:.88}
+.recruitment-button{margin-top:18px;text-decoration:none;text-align:center}
+@media(max-width:820px){.hero-university-brand img{width:min(260px,100%)}}
+@media print{.hero-university-brand{display:block!important}.hero-university-brand img{width:225px!important}}
