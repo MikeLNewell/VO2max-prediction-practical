@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import {strict as assert} from 'node:assert';
+import {hawleyHypothetical,toLmin,relativeVo2,regression,validStage,parseCSV,demoStages} from '../calc.mjs';
+test('Hawley teaching example calculates with maximal power input',()=>assert.ok(Math.abs(hawleyHypothetical(250)-3.2875)<1e-9));
+test('Converts oxygen consumption units',()=>{assert.equal(toLmin(1500,'mL/min'),1.5);assert.equal(toLmin(1.5,'L/min'),1.5);assert.equal(relativeVo2(3.5,70),50)});
+test('Rejects invalid oxygen units',()=>assert.throws(()=>toLmin(1,'litres')));
+test('Validates stage data',()=>{assert.deepEqual(validStage({power:100,vo2:1.2,rpe:13,hr:null,rer:null,ve:null}),[]);assert.ok(validStage({power:100,vo2:1.2,rpe:22,hr:null,rer:null,ve:null}).length)});
+test('Regression computes a linear slope and R squared',()=>{const r=regression([{x:50,y:1},{x:100,y:2},{x:150,y:3}]);assert.ok(Math.abs(r.slope-0.02)<1e-9);assert.equal(r.r2,1)});
+test('Parses quoted CSV',()=>assert.deepEqual(parseCSV('Name,Note\nA,"Hello, World"\n'),[['Name','Note'],['A','Hello, World']]));
+test('Demo ends at RPE 15 and has five stages',()=>{const d=demoStages();assert.equal(d.length,5);assert.equal(d.at(-1).rpe,15)});
